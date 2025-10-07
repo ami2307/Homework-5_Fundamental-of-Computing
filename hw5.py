@@ -2,13 +2,19 @@
 import re
 
 def pequod(f):
-    text = open(f).read()
+    text = open(f, 'r', encoding='utf-8').read()
     pattern = re.compile(
-        r'w\s*h\s*i\s*t\s*e\s*\s*w\s*h\s*a\s*l\s*e(\'s)?(?!s)\b',
+        r"\b"                     
+        r"w\s*h\s*i\s*t\s*e"       
+        r"\s+"                     
+        r"w\s*h\s*a\s*l\s*e"       
+        r"(?:'s)?\b",              
         re.IGNORECASE
     )
-    matches = pattern.findall(text)
+
+    matches = list(pattern.finditer(text))
     return len(matches)
+
 
     
 
