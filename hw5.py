@@ -3,9 +3,13 @@ import re
 
 def pequod(f):
     text = open(f).read()
-    pattern = re.compile(r'w\s*h\s*i\s*t\s*e\s*w\s*h\s*a\s*l\s*e', re.IGNORECASE)
+    pattern = re.compile(
+        r'w\s*h\s*i\s*t\s*e\s*\s*w\s*h\s*a\s*l\s*e(\'s)?\b',
+        re.IGNORECASE
+    )
     matches = pattern.findall(text)
     return len(matches)
+
     
 
 # find_dotcoms():  extracting information
