@@ -16,15 +16,13 @@ def pequod(f):
     return len(matches)
 
 
-    
-
 # find_dotcoms():  extracting information
 import re
 
 def find_dotcoms(s):
-  
-    pattern = re.compile(r'\b([a-zA-Z0-9-]+)\.com\b')
+    pattern = re.compile(r'([A-Za-z0-9-]+)\.com(?!\.)')
     return pattern.findall(s)
+
     
 
 # palindrome_re:  identifying palindromes the hard way
